@@ -2,7 +2,7 @@
 
 This repository contains all my significant projects that I consider relevant.
 
-> For each project in this list I will present some description and the sources from which i got inspired. More details about a specific project will be in its associated folder.
+> For each project in this list I will present some description and the sources from which i got inspired if it's the case. More details about a specific project will be in its associated folder.
 
 ## 1. PING-PONG Game on Arduino
 
@@ -16,7 +16,33 @@ This repository contains all my significant projects that I consider relevant.
 
 Imagine this situation: you are with your friends somewhere out and the boredom makes its appearance. Everyone wants to do something different and go to different places. Lucky for you that you have an amazing game of Ping-Pong that will enjoy everyone. All they had to do is to move the paddle with the help of a potentiometer and try to hit the ball.
 
-This project was done in 2023 as a project for "Linear Electronic Circuits" course.
+This project was done in December 2023 as a project for "Linear Electronic Circuits" course from my faculty.
 ![Ping-pong Home Page](https://github.com/claulau001/projects/assets/147533902/0cc0fe97-e4ea-4b47-b542-265892e81b42)
 
-</details><summary>Click here for description</summary>
+### What I've learned
+
+- how to handle real time given tasks (the move of potentiometer, press the button)
+- working with classes
+- implementing a circuit and using it
+- how the digital/analog signals works
+
+</details>
+
+## 2. Weather page
+
+<details>
+
+### Description
+
+You want to go on a vacation somewhere far from your home country, but you're unsure about the current weather conditions. You have a couple of options to get informed: you could open your phone's basic weather app that everyone uses, or you could check out my weather page. There, you can search for your desired destination. You'll receive the best weather information for the current day or for the next 5 days.
+
+This project was done in December 2023 as a project for "Web Technologies" course from my faculty.
+
+### What I've learned
+
+- fundamental JavaScript
+- using fetch functionality
+- solving UI/UX tasks
+- working with APIs
+
+</details>

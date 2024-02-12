@@ -1,0 +1,162 @@
+body{
+    background-color: aqua;
+    background-size: cover;
+    background-position: center;
+}
+
+#cityInput{
+    width: 400px;
+    height: 30px;
+}
+
+#suggestionsContainer{
+    padding: 0px;
+    margin: 0px;
+}
+
+#weatherWidgetsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid1fr2fr{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.info{
+    color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+.flexboxWithAlignItemsCentered {
+    display: flex;
+    align-items: center;
+}
+
+.flexboxCentered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherDescriptionWithDateContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    max-height: 100px;
+}
+
+.weatherWidget{
+    width: 400px;
+    margin: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.weatherDescriptionContainerItem{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.actionButton{
+    border: 0px;
+    width: fit-content;
+    height: 30px;
+    margin: 0 10px 0 10px;
+}
+
+.favoriteButton{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    padding: 0;
+}
+
+.whiteContainerWithContentCentered{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 100px 100px 100px;
+}
+
+.whiteContainer{
+    background-color: white;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    margin: 0px 100px 0px 100px;
+}
+
+.citySuggestion{
+    list-style-type: none;
+    background-color: bisque;
+    width: 404px;
+    height: 30px;
+    padding: 0;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+ul li:not(:first-child){
+    border-top: 0px;
+}
+
+.citySuggestion:hover{
+    cursor: pointer;
+    background-color: blanchedalmond;
+    font-weight: bold;
+
+}
+
+.actionButton:hover{
+    background-color: bisque;
+    cursor: pointer;
+}
+
+.spinner:not([hidden]) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.spinner::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #f25a41;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear
+}
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    #cityInput{
+        width: 250px;
+    }
+
+    .citySuggestion{
+        width: 254px;
+    }
+
+    .whiteContainerWithContentCentered{
+        margin: 0px 0px 100px 0px;
+    }
+
+    .whiteContainer{
+        margin: 0px;
+    }
+}
+    
