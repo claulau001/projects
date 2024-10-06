@@ -3,7 +3,7 @@
 ### Positioning
 
 For this project to succeed, it needs to be properly aligned with the cardinal points:
-![Positioning]https://github.com/user-attachments/assets/bba05da6-c86f-4bc9-8c86-14750f429645
+![Positioning](https://github.com/user-attachments/assets/bba05da6-c86f-4bc9-8c86-14750f429645)
 
 ### Presentation Video
 
