@@ -46,3 +46,21 @@ This project was done in December 2023 as a project for "Web Technologies" cours
 - working with APIs
 
 </details>
+
+## 3. Solar Tracker
+
+<details>
+
+### Description
+
+We all use electrical energy in our daily lives, but not everyone considers where this energy comes from. It's crucial to rely on renewable sources for our electricity. In this project, I aim to maximize the efficiency of a solar panel by enabling it to track the sun, allowing it to generate electricity more effectively. I've designed this solar tracker to be user-friendly: simply position it with the photoresistors facing east, south, and west, and you can enjoy clean energy for your devices.
+
+This project was done in August 2024 for personal use.
+
+### What I've learned
+
+- working with a stepper motor
+- using a voltage divider
+- using a receiver module
+
+</details>
