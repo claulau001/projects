@@ -1,0 +1,53 @@
+html{
+	background-image: url('../../photos/output-onlinepngtools.png');
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px
+}
+
+.register-container{
+	background: #d1dced;
+	border: 2px solid black;
+}
+
+.register-form{
+	padding: 25px;
+	display: flex;
+	flex-direction: row;
+}
+
+.register-entry{
+	display: flex;
+	margin: 0px 0px 10px 0px;
+}
+
+.register-p{
+	margin: 0px;
+	width: 120px;
+}
+
+.data-divizor{
+	padding: 0px;
+}
+
+#register-button-container{
+	display: flex;
+	justify-content:center;
+	padding-bottom:20px;
+}
+
+.register-button{
+	width: 200px;
+	height: 50px;
+}
+
+.register-button:hover{
+	cursor:pointer;
+}

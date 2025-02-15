@@ -1,0 +1,30 @@
+.confirm-stergere-serviciu {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.confirm-stergere-serviciu p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Formulare pentru confirmare acțiuni */
+.confirm-stergere-serviciu form {
+  margin-bottom: 10px;
+}
+
+.confirm-stergere-serviciu button {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

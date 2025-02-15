@@ -64,3 +64,22 @@ This project was done in August 2024 for personal use.
 - using a receiver module
 
 </details>
+
+## 4. Home Services Website
+
+<details>
+
+### Description
+
+You own a nationally recognized company that provides home services, but you believe you can enhance your business by streamlining the scheduling process and improving service record management. One effective solution is to develop a full-stack application with database access to efficiently store and manage data. This not only simplifies internal operations but also creates an opportunity for customers to book appointments more easily and check employee availability.
+
+This project was done in December 2025 as a project for "Web application with Java" and "Databases" courses from my faculty.
+
+### What I've learned
+
+- SQL Syntax
+- working with database from backend
+- making a full-stack application
+- connecting backend to frontend
+
+</details>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicii la domiciliu</title>
+  <link rel="stylesheet" href="/styling/globalStyle.css" />
+  <link rel="stylesheet" href="/styling/adaugaServiciu/adaugaServiciuStyle.css" />
+</head>
+<body>
+<header>
+  <nav class="top-nav">
+    <div class="logo-container">
+      <img src="/photos/logo.png" alt="logo"/>
+      <span class="logo-text">Servicii la domiciliu</span>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class="menu-button-container" for="menu-toggle">
+      <div class="menu-button"></div>
+    </label>
+    <ul class="menu" id="menu-unordered-list">
+      <li onclick="location.href='index.html';">Servicii</li>
+      <li onclick="location.href='programeaza.html';">Programeaza</li>
+      <select th:if="${user != null}" class="username-select-menu active" onchange="location = this.value">
+        <option value="" disabled selected hidden th:text="${user.username}"></option>
+        <option value="/profile">Profile</option>
+        <option value="/afisareFacturi">Facturi</option>
+        <option value="/afisareProgramari">Programari</option>
+        <option value="/admin" th:if="${user.isAdmin == true}">Admin Panel</option>
+        <option value="/logoutQuestion">Logout</option>
+      </select>
+    </ul>
+  </nav>
+</header>
+<main style="padding: 20px">
+  <p th:if="${numeServiciuExistaDeja != null}" style="color: red">Acest nume de serviciu exista deja</p>
+  <div th:if="${succesUpdateServiciu != null}">
+    <p th:if="${succesUpdateServiciu == false}" style="color:red">Serviciul nu s-a putut modifica</p>
+  </div>
+  <p th:text="|Editeaza serviciul ${serviciulSelectat.numeServiciu}|" style="font-size: 30px"></p>
+  <form method="POST" action="/updateServiciu">
+    <input type="hidden" th:name="nume_serviciu_vechi" th:value="${serviciulSelectat.numeServiciu}" />
+    <label for="NumeServiciu">Nume Serviciu: </label> <br>
+    <input type="text" id="NumeServiciu" name="NumeServiciu" th:value="${serviciulSelectat.numeServiciu}"/>
+    <br>
+    <label for="DescriereServiciu">Descriere: </label> <br>
+    <input type="text" id="DescriereServiciu" name="DescriereServiciu" th:value="${serviciulSelectat.descriere}"/>
+    <br>
+    <label for="PretPeOra">Pret pe ora: </label> <br>
+    <input type="number" id="PretPeOra" name="PretPeOra" th:value="${serviciulSelectat.pretPeOra}"/>
+    <br>
+    <button type="submit">Salveaza</button>
+  </form>
+</main>
+<footer>
+  <a href="index.html">ServiciiDomiciliu.com</a>
+</footer>
+</body>
+</html>

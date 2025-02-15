@@ -1,0 +1,33 @@
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main p:first-of-type {
+  font-size: 30px;
+  color: #0033FF;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+main p:nth-of-type(2) {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+main p:last-of-type {
+  font-size: 30px;
+  color: #FF5733;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 30px;
+}
+

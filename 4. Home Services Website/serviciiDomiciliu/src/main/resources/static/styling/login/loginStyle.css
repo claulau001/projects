@@ -1,0 +1,28 @@
+main {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px
+}
+
+h1{
+	font-size: 32px;
+	padding: 10px;
+}
+
+.login-container{
+	background: #d1dced;
+	border: 2px solid black;
+}
+
+.login-form{
+	padding: 25px;
+}
+
+.login-p{
+	margin: 0px;
+}
+
+.login-entry{
+	margin: 0px 0px 10px 0px;
+}

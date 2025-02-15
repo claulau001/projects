@@ -1,0 +1,274 @@
+  html, body {
+    margin: 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  * {
+    font-family: "Raleway" sans-serif; /*sans-serif este utilizat pentru cazuri speciale in care browser-ul nu poate citi fontul propus si il inlocuieste cu un font asemanator disponibil */
+    box-sizing: border-box;
+  }
+  
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to left, #0d18b8, #1854c2);
+    color: #FFF;
+    height: 100px;
+    padding: 0 15px;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-container img{
+    width: 70px;
+    height: 70px;
+  }
+
+  .logo-text {
+    margin-left: 1fr;
+    font-size: 34px;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .username-select-menu {
+      height: 100px;
+      padding: 10px 0px 10px 10px;
+      background: transparent;
+      border: none;
+      color: inherit;
+      font-size: inherit;
+      cursor: pointer;
+  }
+
+  .username-select-menu > option {
+    background-color: #0033FF;
+    margin: 10px;
+  }
+
+  .username-select-menu:hover{
+   	cursor:pointer;
+   	background-color: #0a1282;
+  }
+
+  .username-select-menu:focus,
+  .username-select-menu:active {
+      outline: none;
+  }
+
+  .confirm-logout {
+      position: absolute;
+      top: 15%;
+      left: 90%;
+      background-color: #0033FF;
+      padding:20px;
+      color: white;
+      text-align: center;
+  }
+    .confirm-smth {
+        position: absolute;
+        top: 15%;
+        left: 40%;
+        background-color: #0033FF;
+        padding:20px;
+        color: white;
+        text-align: center;
+    }
+
+.servicii-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 20px;
+}
+
+.container-serviciu{
+  width: 48%; /* Fiecare item va ocupa aproximativ 50% din lățimea containerului */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: solid black 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #4f9edb;
+}
+
+.titlu-serviciu{
+    font-size: 32px;
+}
+
+.pret-pe-ora-serviciu{
+    font: Arial;
+}
+
+.descriere-serviciu{
+    font: Arial;
+}
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .active {
+    background-color: #34a4eb;
+    font-weight: bold;
+  }
+  
+  .menu > li {
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+  
+ .menu > li:hover{
+ 	cursor:pointer;
+ 	background-color: #0a1282;
+ }
+  
+  .menu-button-container {   /* buton hamburger */
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .informatie{
+    margin: 0;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+  /* || inceput design buton burger */
+
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1); /*animatie apasare buton*/
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+
+  /* || sfarsit design buton burger*/
+
+  .dropdown-casa{
+    display:none;
+  }
+
+  .dropdown-casa.visible{
+    display:block;
+  }
+  
+  @media (max-width: 700px) { /*pentru ecrane mici*/
+    .menu-button-container {
+      display: flex; /*afisare buton burger*/
+    }
+
+    /*inceput meniu ecrane mici*/
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 100px; /* trebuie = cu height de la .top-nav*/
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .menu li.active{
+        background: #0a1282;
+        font-weight: bold;
+    }
+    
+
+    .menu > li,
+    .menu > select{
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background:linear-gradient(to left, #0d18b8, #1854c2);
+    }
+    .menu > select {
+      border-bottom: 1px solid black;
+    }
+    /*|| sfarsit meniu ecrane mici*/ 
+
+    #menu-toggle ~ .menu li,
+    #menu-toggle ~ .menu select {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #menu-toggle:checked ~ .menu li,
+    #menu-toggle:checked ~ .menu select {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+    }
+
+  }
+
+  footer{
+    border-top: 2px solid black;
+  }
+  footer a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }

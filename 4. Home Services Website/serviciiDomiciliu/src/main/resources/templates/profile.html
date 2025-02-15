@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Servicii la domiciliu</title>
+	<link rel="stylesheet" href="/styling/globalStyle.css" />
+	<link rel="stylesheet" href="/styling/profile/profileStyle.css" />
+</head>
+<body>
+<header>
+	<nav class="top-nav">
+		<div class="logo-container">
+			<img src="/photos/logo.png" alt="logo"/>
+			<span class="logo-text">Servicii la domiciliu</span>
+		</div>
+		<input id="menu-toggle" type="checkbox" />
+		<label class="menu-button-container" for="menu-toggle">
+			<div class="menu-button"></div>
+		</label>
+		<ul class="menu" id="menu-unordered-list">
+			<li onclick="location.href='index.html';">Servicii</li>
+			<li onclick="location.href='programeaza.html';">Programeaza</li>
+			<select th:if="${user != null}" class="username-select-menu active" onchange="location = this.value">
+				<option value="" disabled selected hidden th:text="${user.username}"></option>
+				<option value="/profile">Profile</option>
+				<option value="/afisareFacturi">Facturi</option>
+				<option value="/afisareProgramari">Programari</option>
+				<option value="/admin" th:if="${user.isAdmin == true}">Admin Panel</option>
+				<option value="/logoutQuestion">Logout</option>
+			</select>
+		</ul>
+	</nav>
+</header>
+<main style="padding: 20px">
+<p th:text="|${user.username} - Edit user profile|" style="font-size: 30px"></p>
+	<div th:if="${succes == false}" style="color: red;">
+		<p>Ceva nu a mers bine</p>
+		<p th:if="${faraLiniiModificate != null}">Nu s-a reusit inserarea in baza de date</p>
+		<p th:if="${longNameError != null}">Numele este prea lung</p>
+		<p th:if="${shortNameError != null}">Numele este prea scurt</p>
+		<p th:if="${numeNotContainsOnlyLettersError != null}">Numele trebuie sa contina doar litere din alfabetul englez</p>
+		<p th:if="${longPrenumeError != null}">Prenumele este prea lung</p>
+		<p th:if="${shortPrenumeError != null}">Prenumele este prea scurt</p>
+		<p th:if="${prenumeNotContainsOnlyLettersError != null}">Prenumele trebuie sa contina doar litere din alfabetul englez</p>
+		<p th:if="${judetError != null}">Judetul trebuie sa contina doar litere din alfabetul englez si sa fie intre 2-50 caractere</p>
+		<p th:if="${anNastereError != null}">Anul de nastere nu este posibil</p>
+		<p th:if="${minorError != null}">Sunteti minor pentru a avea cont, chemati un adult</p>
+		<p th:if="${orasError != null}">Orasul trebuie sa contina doar litere din alfabetul englez si sa fie intre 2-50 caractere</p>
+		<p th:if="${longStradaError != null}">Numele strazii este prea lung</p>
+		<p th:if="${shortStradaError != null}">Numele strazii este prea scurt</p>
+		<p th:if="${lessLettersStradaError != null}">Numele strazii contine prea putine litere</p>
+		<p th:if="${longBlocError != null}">Numele blocului este prea lung</p>
+		<p th:if="${longScaraError != null}">Numele scarii de bloc este prea lung</p>
+		<p th:if="${longTelefonError != null}">Numarul de telefon este prea lung</p>
+		<p th:if="${notValidTelefonError != null}">Numarul de telefon este invalid. Exemplu valid:0712345678 sau +3913512457872</p>
+		<p th:if="${longUsernameError != null}">Username este prea lung (max. 50 caractere)</p>
+		<p th:if="${shortPasswordError != null}">Parola este prea mica</p>
+		<p th:if="${longPasswordError != null}">Parola este prea mare</p>
+		<p th:if="${differentPasswordError != null}">Parolele introduse nu sunt identice</p>
+		<p th:if="${passwordNotContainsBigLetterError != null}">Parola trebuie sa contina cel putin o litera mare</p>
+		<p th:if="${passwordNotContainsSmallLetterError != null}">Parola trebuie sa contina cel putin o litera mica</p>
+		<p th:if="${passwordNotContainsMin4DigitsError != null}">Parola trebuie sa contina cel putin 4 cifre</p>
+		<p th:if="${passwordNotContainsSpecialCaracterError != null}">Parola trebuie sa contina cel putin un caracter special (!,?,@,#,!,% etc)</p>
+		<p th:if="${tooManyArondsEmailError != null}">Email-ul contine prea multe caractere '@'</p>
+		<p th:if="${tooManyDotsEmailError != null}">Email-ul contine prea multe puncte dupa '@'</p>
+		<p th:if="${shortEmailUsernameError != null}">Username-ul email-ului este prea scurt</p>
+		<p th:if="${shortEmailServerError != null}">Server-ul email-ului este prea scurt, incearca cu @gmail</p>
+		<p th:if="${shortEmailDomainError != null}">Domeniul email-ului este prea scurt, incearca .ro sau .com</p>
+		<p th:if="${longEmailError != null}">Email-ul este prea lung</p>
+		<p th:if="${usernameExistsError != null}">Deja exista un cont cu acest username</p>
+		<p th:if="${emailExistsError != null}">Deja exista un cont cu acest email</p>
+	</div>
+	<form method="POST" action="/updateUser">
+		<label for="numeUserEdit">Nume: </label> <br>
+		<input type="text" id="numeUserEdit" name="numeUserEdit" th:placeholder="${user.nume}"/>
+		<br>
+		<label for="prenumeUserEdit">Prenume: </label> <br>
+		<input type="text" id="prenumeUserEdit" name="prenumeUserEdit" th:placeholder="${user.prenume}" />
+		<br>
+		<label for="judetUserEdit">Judet: </label> <br>
+		<input type="text" id="judetUserEdit" name="judetUserEdit" th:placeholder="${user.judet}"/>
+		<br>
+		<label for="orasUserEdit">Oras: </label> <br>
+		<input type="text" id="orasUserEdit" name="orasUserEdit" th:placeholder="${user.oras}"/>
+		<br>
+		<label for="stradaUserEdit">Nume Strada: </label> <br>
+		<input type="text" id="stradaUserEdit" name="stradaUserEdit" th:placeholder="${user.strada}"/>
+		<br>
+		<label for="nrStradaUserEdit">Numar Strada: </label> <br>
+		<input type="number" id="nrStradaUserEdit" name="nrStradaUserEdit" th:placeholder="${user.numarStrada}"/>
+		<br>
+		<label for="blocUserEdit">Bloc: </label> <br>
+		<input type="text" id="blocUserEdit" name="blocUserEdit" th:placeholder="${user.bloc}"/>
+		<br>
+		<label for="scaraUserEdit">Scara: </label> <br>
+		<input type="text" id="scaraUserEdit" name="scaraUserEdit" th:placeholder="${user.scara}"/>
+		<br>
+		<label for="apartamentUserEdit">Apartament: </label> <br>
+		<input type="number" id="apartamentUserEdit" name="apartamentUserEdit" th:placeholder="${user.apartament}"/>
+		<br>
+		<label for="emailUserEdit">Email: </label> <br>
+		<input type="email" id="emailUserEdit" name="emailUserEdit" th:placeholder="${user.email}"/>
+		<br>
+		<label for="nrTelefonUserEdit">Numar Telefon: </label> <br>
+		<input type="text" id="nrTelefonUserEdit" name="nrTelefonUserEdit" th:placeholder="${user.numarTelefon}"/>
+		<br>
+		<label for="usernameUserEdit">Username: </label> <br>
+		<input type="text" id="usernameUserEdit" name="usernameUserEdit" th:placeholder="${user.username}"/>
+		<br>
+		<label for="parolaNouaUserEdit">Parola Noua: </label> <br>
+		<input type="password" id="parolaNouaUserEdit" name="parolaNouaUserEdit" />
+		<br>
+		<label for="parolaNouaConfirmataUserEdit">Confirma Parola Noua: </label> <br>
+		<input type="password" id="parolaNouaConfirmataUserEdit" name="parolaNouaConfirmataUserEdit" />
+		<br>
+		<button type="submit">Save</button>
+	</form>
+</main>
+<footer>
+	<a href="index.html">ServiciiDomiciliu.com</a>
+</footer>
+</body>
+</html>
