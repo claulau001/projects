@@ -83,3 +83,20 @@ This project was done in December 2025 as a project for "Web application with Ja
 - connecting backend to frontend
 
 </details>
+
+## 5. Planes game
+
+<details>
+
+### Description
+
+A perfect game for a lunch break. If you’re good at reading your friends' minds, this game is for you. You need to place 3 planes on a 10x10 grid in the most intricate way possible, making them hard to guess. The first player to hit all three heads of the enemy player's planes wins.
+
+This project was done in November 2025 as a personal project.
+
+### What I've learned
+
+- python syntax
+- using a visual interface
+
+</details>
